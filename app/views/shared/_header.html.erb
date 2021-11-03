@@ -1,0 +1,69 @@
+<header>
+  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+    <%= link_to root_path, class: 'navbar-brand' do %>
+        <%= image_tag 'https://i.gyazo.com/7f261150d754f1e3147df2e59941446c.png' %>
+    <% end %>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto main-nav align-items-center">
+        <li class="nav-item dropdown-slide">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             パーティー募集
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right">
+             <%= link_to 'パーティー募集一覧', '#', class: 'dropdown-item' %>
+             <%= link_to 'パーティー募集作成', '#', class: 'dropdown-item' %>
+          </div>
+        </li>
+        
+        <li class="nav-item dropdown-slide">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             ベストプレイ
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right">
+             <%= link_to 'ベストプレイ一覧', '#', class: 'dropdown-item' %>
+             <%= link_to 'ベストプレイ投稿', '#', class: 'dropdown-item' %>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown-slide">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             おもしろクリップ
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right">
+             <%= link_to 'おもしろクリップ一覧', '#', class: 'dropdown-item' %>
+             <%= link_to 'おもしろクリップ投稿', '#', class: 'dropdown-item' %>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to 'ユーザー検索', '#', class: 'nav-link' %>
+        </li>
+
+        <li class="nav-item">
+           <%= link_to 'お気に入り一覧', '#', class: 'nav-link' %>
+        </li>
+
+        <li class="nav-item dropdown-slide">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="header-profile">
+             <%= image_tag 'https://i.gyazo.com/a84314c87dd2f2f1636b2a5e2085eb3f.png', size: '40x40', class: 'rounded-circle mr15' %>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-item">らんてっく たろう</div>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
+
+            <%= link_to 'ログアウト', '#', class: 'dropdown-item' %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
