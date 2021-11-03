@@ -55,7 +55,7 @@
              <%= image_tag 'https://i.gyazo.com/a84314c87dd2f2f1636b2a5e2085eb3f.png', size: '40x40', class: 'rounded-circle mr15' %>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <div class="dropdown-item">らんてっく たろう</div>
+            <div class="dropdown-item"><%= current_user.decorate.full_name %></div>
             <div class="dropdown-divider"></div>
             <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
 
