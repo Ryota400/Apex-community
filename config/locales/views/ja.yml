@@ -3,6 +3,15 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    post: '投稿'
+    message:
+      require_login: 'ログインしてください'
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか?'
   users:
     new:
       title: 'ユーザー登録'
@@ -20,13 +29,17 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
-  boards:
+  party_boards:
     index:
-      title: '掲示板一覧'
+      title: 'パーティー募集一覧'
     new:
-      title: '掲示板作成'
+      title: 'パーティー募集作成'
     bookmarks:
-      title: 'ブックマーク一覧'
+      title: 'お気に入り一覧'
+    show: 
+      title: 'パーティー募集詳細'
+    edit:
+      title: 'パーティー募集編集'
   profiles:
     show:
       title: 'プロフィール'
