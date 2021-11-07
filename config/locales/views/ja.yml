@@ -40,6 +40,14 @@ ja:
       title: 'パーティー募集詳細'
     edit:
       title: 'パーティー募集編集'
+    bookmarks:
+      title: 'お気に入り一覧'
+      no_result: 'お気に入り登録していません'
+  bookmarks:
+    create:
+      success: 'お気に入り登録しました'
+    destroy:
+      success: 'お気に入り登録を外しました'
   profiles:
     show:
       title: 'プロフィール'

@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_many :party_boards, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_party_boards, through: :bookmarks, source: :party_board
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -14,5 +16,17 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+  end
+
+  def bookmark(party_board)
+    bookmark_party_boards << party_board
+  end
+
+  def unbookmark(party_board)
+    bookmark_party_boards.destroy(party_board)
+  end
+
+  def bookmark?(party_board)
+    bookmark_party_boards.include?(party_board)
   end
 end

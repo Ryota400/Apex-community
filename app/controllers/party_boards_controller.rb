@@ -43,6 +43,10 @@ class PartyBoardsController < ApplicationController
         redirect_to party_boards_path, success: t('defaults.message.deleted', item: PartyBoard.model_name.human)
     end
 
+    def bookmarks
+        @bookmark_party_boards = current_user.bookmark_party_boards.includes(:user).order(created_at: :desc)
+    end
+
     private
     
     def party_board_params
