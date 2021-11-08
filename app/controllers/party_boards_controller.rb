@@ -1,6 +1,6 @@
 class PartyBoardsController < ApplicationController
     def index
-        @party_boards = PartyBoard.all.includes(:user).order(created_at: :desc)
+        @party_boards = PartyBoard.all.includes(:user).order(created_at: :desc).page(params[:page])
     end
 
     def new
@@ -44,7 +44,7 @@ class PartyBoardsController < ApplicationController
     end
 
     def bookmarks
-        @bookmark_party_boards = current_user.bookmark_party_boards.includes(:user).order(created_at: :desc)
+        @bookmark_party_boards = current_user.bookmark_party_boards.includes(:user).order(created_at: :desc).page(params[:page])
     end
 
     private
