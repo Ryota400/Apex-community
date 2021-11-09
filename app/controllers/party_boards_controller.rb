@@ -1,6 +1,7 @@
 class PartyBoardsController < ApplicationController
     def index
-        @party_boards = PartyBoard.all.includes(:user).order(created_at: :desc).page(params[:page])
+        @q = PartyBoard.ransack(params[:q])
+        @party_boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
     end
 
     def new
@@ -44,7 +45,8 @@ class PartyBoardsController < ApplicationController
     end
 
     def bookmarks
-        @bookmark_party_boards = current_user.bookmark_party_boards.includes(:user).order(created_at: :desc).page(params[:page])
+        @q = current_user.bookmark_party_boards.ransack(params[:q])
+        @bookmark_party_boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
     end
 
     private
