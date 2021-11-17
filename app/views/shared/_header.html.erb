@@ -19,15 +19,15 @@
              <%= link_to 'パーティー募集作成', new_party_board_path, class: 'dropdown-item' %>
           </div>
         </li>
-        
+
         <li class="nav-item dropdown-slide">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              ベストプレイ
           </a>
 
           <div class="dropdown-menu dropdown-menu-right">
-             <%= link_to 'ベストプレイ一覧', '#', class: 'dropdown-item' %>
-             <%= link_to 'ベストプレイ投稿', '#', class: 'dropdown-item' %>
+             <%= link_to 'ベストプレイ一覧', videos_path, class: 'dropdown-item' %>
+             <%= link_to 'ベストプレイ投稿', new_video_path, class: 'dropdown-item' %>
           </div>
         </li>
 
@@ -65,4 +65,3 @@
     </div>
   </nav>
 </header>
-

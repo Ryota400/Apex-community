@@ -1,0 +1,23 @@
+<% content_for(:title, t('.title')) %>
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="video-id-<%= video.id %>">
+   <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">
+          <%= link_to video.title, video_path(video) %>
+      </h4>
+        <%= render 'crud_menus', video: video  %>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <%= icon 'far', 'user' %>
+          <%= video.user.decorate.full_name %>
+        </li>
+        <li class="list-inline-item">
+          <%= icon 'far', 'calendar' %>
+          <%= l video.created_at, format: :long %>
+        </li>
+      </ul>
+    </div>
+  </div>
+ </div>
+</div>
