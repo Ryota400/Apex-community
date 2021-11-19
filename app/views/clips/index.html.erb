@@ -2,21 +2,21 @@
 <div class="container pt-3">
    <div class="row">
      <div class="col-lg-10 offset-lg-1">
-       <%= render 'search_form', url: videos_path %>
+       <%= render 'search_form', url: clips_path %>
      </div>
-     <%= paginate @videos %>
+     <%= paginate @clips %>
    </div>
 
    <div class="row">
      <div class="col-12">
        <div class="row">
-          <% if @videos.present? %>
-             <%= render @videos %>
+          <% if @clips.present? %>
+             <%= render @clips %>
           <% else %>
              <p><%= t('.no_result') %></p>
           <% end %>
        </div>
-       <%= paginate @videos %>
+       <%= paginate @clips %>
      </div>
    </div>
 </div>

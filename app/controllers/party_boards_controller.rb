@@ -1,4 +1,5 @@
 class PartyBoardsController < ApplicationController
+    before_action :set_board, only: %i[edit update destroy]
     def index
         @q = PartyBoard.ransack(params[:q])
         @party_boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
@@ -50,7 +51,7 @@ class PartyBoardsController < ApplicationController
     end
 
     private
-    
+
     def party_board_params
         params.require(:party_board).permit(:title, :body)
     end

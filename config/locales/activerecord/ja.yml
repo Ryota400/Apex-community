@@ -3,6 +3,8 @@ ja:
     models:
       user: 'ユーザー'
       party_board: 'パーティー募集'
+      video: 'ベストプレイ'
+      clip: 'おもしろクリップ'
       commet: 'コメント'
     attributes:
       user:
@@ -13,5 +15,18 @@ ja:
         first_name: '名'
         full_name: '氏名'
         avatar: 'アバター'
+      party_board:
+        title: 'タイトル'
+        body: '募集メッセージ'
+      video:
+        title: 'タイトル'
+        video: '動画'
+      clip:
+        title: 'タイトル'
+        video: '動画'
       comment:
         body: 'コメント'
+    attributes:
+      id: 'ID'
+      created_at: '作成日時'
+      updated_at: '更新日時'

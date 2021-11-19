@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_action :set_board, only: %i[edit update destroy]
   def index
     @q = Video.ransack(params[:q])
     @videos = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])

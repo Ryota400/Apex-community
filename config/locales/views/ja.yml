@@ -6,6 +6,9 @@ ja:
     post: '投稿'
     search_word: '検索ワード'
     edit: '編集'
+    delete: '削除'
+    password_reset: 'パスワードリセット'
+    unspecified: '指定なし'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -36,17 +39,38 @@ ja:
   party_boards:
     index:
       title: 'パーティー募集一覧'
+      no_result: '掲示板がありません。'
     new:
       title: 'パーティー募集作成'
     bookmarks:
       title: 'お気に入り一覧'
-    show: 
+    show:
       title: 'パーティー募集詳細'
     edit:
       title: 'パーティー募集編集'
     bookmarks:
       title: 'お気に入り一覧'
       no_result: 'お気に入り登録していません'
+  videos:
+    index:
+      title: 'ベストプレイ集'
+      no_result: '掲示板がありません。'
+    new:
+      title: 'ベストプレイ'
+    show:
+      title: 'ベストプレイ詳細'
+    edit:
+      title: 'ベストプレイ編集'
+  clips:
+    index:
+      title: 'おもしろクリップ集'
+      no_result: '掲示板がありません。'
+    new:
+      title: 'おもしろクリップ'
+    show:
+      title: 'おもしろクリップ詳細'
+    edit:
+      title: 'おもしろクリップ詳細'
   bookmarks:
     create:
       success: 'お気に入り登録しました'

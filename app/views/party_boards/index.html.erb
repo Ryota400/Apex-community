@@ -4,6 +4,7 @@
      <div class="col-lg-10 offset-lg-1">
        <%= render 'search_form', url: party_boards_path %>
      </div>
+     <%= paginate @party_boards %>
    </div>
 
    <div class="row">
@@ -19,5 +20,3 @@
      </div>
    </div>
 </div>
-          
-        

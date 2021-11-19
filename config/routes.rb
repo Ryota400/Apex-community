@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: %i[create destroy]
   resources :videos
+  resources :clips
   resource :profile, only: %i[show edit update]
 end
