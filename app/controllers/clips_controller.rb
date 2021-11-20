@@ -6,11 +6,11 @@ class ClipsController < ApplicationController
   end
 
   def new
-   @clip = Clip.new
+    @clip = Clip.new
   end
 
   def create
-   @clip = current_user.clips.build(clip_params)
+    @clip = current_user.clips.build(clip_params)
     if @clip.save
       redirect_to clips_path, success: t('defaults.message.created', item: Clip.model_name.human)
     else
@@ -20,7 +20,7 @@ class ClipsController < ApplicationController
   end
 
   def show
-   @clip = Clip.find(params[:id])
+    @clip = Clip.find(params[:id])
   end
 
   def edit
@@ -43,10 +43,9 @@ class ClipsController < ApplicationController
     redirect_to clips_path, success: t('defaults.message.deleted', item: Clip.model_name.human)
   end
 
-
   private
 
   def clip_params
-   params.require(:clip).permit(:title, :video)
+    params.require(:clip).permit(:title, :video)
   end
 end

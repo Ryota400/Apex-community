@@ -3,6 +3,11 @@
     <%= image_tag user.avatar_url, class: 'rounded-circle', size: '50x50' %>
   </td>
   <td>
-    <%= user.decorate.full_name %>
+    <%= user.decorate.user_name %>
   </td>
+  <td>
+    <%= user.genre %>
+  </td>
+  <td>
+    <%= link_to t('defaults.show'), user_path(user), class: 'btn btn-info' %>
 </tr>

@@ -1,0 +1,26 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <table class="table table-bordered bg-white">
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:user_name) %></th>
+          <td><%= @user.decorate.user_name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:genre) %></th>
+          <td><%= @user.genre %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:geme) %></th>
+          <td><%= @user.geme %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:avatar) %></th>
+          <td><%= image_tag @user.avatar.url, class: 'rounded-circle', size: '50×50' %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

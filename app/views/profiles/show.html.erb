@@ -10,12 +10,20 @@
           <td><%= current_user.email %></td>
         </tr>
         <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:full_name)) %></th>
-          <td><%= current_user.decorate.full_name %></td>
+          <th scope="row"><%= t(User.human_attribute_name(:user_name)) %></th>
+          <td><%= current_user.decorate.user_name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t(User.human_attribute_name(:genre)) %></th>
+          <td><%= current_user.genre %><td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t(User.human_attribute_name(:geme)) %></th>
+          <td><%= current_user.geme %></td>
         </tr>
         <tr>
           <th scope="row"<%= t(User.human_attribute_name(:avatar)) %></th>
-          <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '100×100' %></td>
+          <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '50×50' %></td>
         </tr>
       </table>
     </div>

@@ -5,6 +5,7 @@ ja:
     logout: 'ログアウト'
     post: '投稿'
     search_word: '検索ワード'
+    show: 'ユーザー詳細'
     edit: '編集'
     delete: '削除'
     password_reset: 'パスワードリセット'

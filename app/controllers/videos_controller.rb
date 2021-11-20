@@ -6,11 +6,11 @@ class VideosController < ApplicationController
   end
 
   def new
-   @video = Video.new
+    @video = Video.new
   end
 
   def create
-   @video = current_user.videos.build(video_params)
+    @video = current_user.videos.build(video_params)
     if @video.save
       redirect_to videos_path, success: t('defaults.message.created', item: Video.model_name.human)
     else
@@ -20,7 +20,7 @@ class VideosController < ApplicationController
   end
 
   def show
-   @video = Video.find(params[:id])
+    @video = Video.find(params[:id])
   end
 
   def edit
@@ -43,10 +43,9 @@ class VideosController < ApplicationController
     redirect_to videos_path, success: t('defaults.message.deleted', item: Video.model_name.human)
   end
 
-
-    private
+  private
 
   def video_params
-   params.require(:video).permit(:title, :video)
+    params.require(:video).permit(:title, :video)
   end
 end

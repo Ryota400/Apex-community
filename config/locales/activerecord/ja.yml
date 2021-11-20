@@ -2,31 +2,27 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
-      party_board: 'パーティー募集'
+      party_board: 'パーティ募集'
       video: 'ベストプレイ'
       clip: 'おもしろクリップ'
-      commet: 'コメント'
+      comment: 'コメント'
     attributes:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
-        last_name: '姓'
-        first_name: '名'
-        full_name: '氏名'
+        user_name: 'ユーザー名'
         avatar: 'アバター'
+        genre: 'ランク'
+        geme: 'プラットフォーム'
       party_board:
         title: 'タイトル'
-        body: '募集メッセージ'
+        body: '本文'
+      comment:
+        body: 'コメント'
       video:
         title: 'タイトル'
         video: '動画'
       clip:
         title: 'タイトル'
-        video: '動画'
-      comment:
-        body: 'コメント'
-    attributes:
-      id: 'ID'
-      created_at: '作成日時'
-      updated_at: '更新日時'
+        clip: '動画'
