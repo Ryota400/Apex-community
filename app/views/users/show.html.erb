@@ -5,6 +5,10 @@
       <h1><%= t('.title') %></h1>
       <table class="table table-bordered bg-white">
         <tr>
+          <th scope="row"><%= User.human_attribute_name(:avatar) %></th>
+          <td><%= image_tag @user.avatar.url, class: 'rounded-circle', size: '50×50' %></td>
+        </tr>
+        <tr>
           <th scope="row"><%= User.human_attribute_name(:user_name) %></th>
           <td><%= @user.decorate.user_name %></td>
         </tr>
@@ -13,12 +17,16 @@
           <td><%= @user.genre %></td>
         </tr>
         <tr>
-          <th scope="row"><%= User.human_attribute_name(:geme) %></th>
-          <td><%= @user.geme %></td>
+          <th scope="row"><%= User.human_attribute_name(:gameid) %></th>
+          <td><%= @user.gameid %></td>
         </tr>
         <tr>
-          <th scope="row"><%= User.human_attribute_name(:avatar) %></th>
-          <td><%= image_tag @user.avatar.url, class: 'rounded-circle', size: '50×50' %></td>
+          <th scope="row"><%= User.human_attribute_name(:pcid) %></th>
+          <td><%= @user.pcid %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= User.human_attribute_name(:geme) %></th>
+          <td><%= @user.geme %></td>
         </tr>
       </table>
     </div>

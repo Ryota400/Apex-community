@@ -15,6 +15,8 @@ ja:
         avatar: 'アバター'
         genre: 'ランク'
         geme: 'プラットフォーム'
+        gameid: 'PS・Xbox・Switch ID'
+        pcid: 'Steam・Origin ID'
       party_board:
         title: 'タイトル'
         body: '本文'

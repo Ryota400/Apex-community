@@ -6,6 +6,10 @@
       <%= link_to t('defaults.edit'), edit_profile_path, class: 'btn btn-success float-right' %>
       <table class="table">
         <tr>
+          <th scope="row"<%= t(User.human_attribute_name(:avatar)) %></th>
+          <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '100×100' %></td>
+        </tr>
+        <tr>
           <th scope="row"><%= t(User.human_attribute_name(:email)) %></th>
           <td><%= current_user.email %></td>
         </tr>
@@ -14,16 +18,20 @@
           <td><%= current_user.decorate.user_name %></td>
         </tr>
         <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:genre)) %></th>
-          <td><%= current_user.genre %><td>
-        </tr>
-        <tr>
           <th scope="row"><%= t(User.human_attribute_name(:geme)) %></th>
           <td><%= current_user.geme %></td>
         </tr>
         <tr>
-          <th scope="row"<%= t(User.human_attribute_name(:avatar)) %></th>
-          <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '50×50' %></td>
+          <th scope="row"><%= t(User.human_attribute_name(:gameid)) %></th>
+          <td><%= current_user.gameid %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t(User.human_attribute_name(:pcid)) %></th>
+          <td><%= current_user.pcid %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t(User.human_attribute_name(:genre)) %></th>
+          <td><%= current_user.genre %><td>
         </tr>
       </table>
     </div>

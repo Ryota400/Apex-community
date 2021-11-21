@@ -27,6 +27,8 @@ ja:
       fail: 'ユーザー登録に失敗しました'
     index:
       title: 'ユーザー一覧'
+    show:
+      title: 'ユーザー詳細'
   user_sessions:
     new:
       title: 'ログイン'
