@@ -15,16 +15,17 @@ ja:
         avatar: 'アバター'
         genre: 'ランク'
         geme: 'プラットフォーム'
-        gameid: 'PS・Xbox・Switch ID'
-        pcid: 'Steam・Origin ID'
+        gameid: 'PS/Xbox/Switch ID'
+        pcid: 'Steam/Origin ID'
       party_board:
         title: 'タイトル'
+        recruit: '募集確認'
         body: '本文'
       comment:
         body: 'コメント'
       video:
         title: 'タイトル'
-        video: '動画'
+        best_movie: '動画'
       clip:
         title: 'タイトル'
-        clip: '動画'
+        movie: '動画'

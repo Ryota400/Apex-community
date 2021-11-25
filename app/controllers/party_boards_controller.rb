@@ -1,5 +1,5 @@
 class PartyBoardsController < ApplicationController
-  before_action :set_board, only: %i[edit update destroy]
+  before_action :set_party_board, only: %i[edit update destroy]
   def index
     @q = PartyBoard.ransack(params[:q])
     @party_boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
@@ -50,9 +50,21 @@ class PartyBoardsController < ApplicationController
     @bookmark_party_boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
+  def users
+  end
+
   private
 
+  def find_party_board
+    @party_board = current_user.party_boards.find(params[:id])
+  end
+
+  def set_party_board
+    @party_board = current_user.party_boards.find(params[:id])
+  end
+
+
   def party_board_params
-    params.require(:party_board).permit(:title, :body)
+    params.require(:party_board).permit(:title, :body, :recruit)
   end
 end

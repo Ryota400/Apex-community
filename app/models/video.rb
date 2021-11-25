@@ -1,5 +1,5 @@
 class Video < ApplicationRecord
+  mount_uploader :best_movie, BestMovieUploader
   belongs_to :user
-  has_one_attached :video
   validates :title, presence: true, length: { maximum: 255 }
 end

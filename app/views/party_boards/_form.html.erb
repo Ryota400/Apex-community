@@ -2,12 +2,18 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group">
       <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
+      <br>
+      <%= f.select :title, ['カジュアル募集', 'ランク募集', 'クラン募集'], {include_blank: '選択してください'} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :recruit %>
+      <br>
+      <%= f.select :recruit,  ['募集中', '募集済'], {include_blank: '選択してください'} %>
     </div>
     <div class="form-group">
       <%= f.label :body %>
       <%= f.text_area :body, class: 'form-control', rows: 10 %>
     </div>
-  
+
     <%= f.submit class: 'btn btn-primary' %>
 <% end %>

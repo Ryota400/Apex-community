@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :set_board, only: %i[edit update destroy]
+  before_action :set_video, only: %i[edit update destroy]
   def index
     @q = Video.ransack(params[:q])
     @videos = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
@@ -45,7 +45,15 @@ class VideosController < ApplicationController
 
   private
 
+  def find_video
+    @video = current_user.videos.find(params[:id])
+  end
+
+  def set_video
+    @video = current_user.videos.find(params[:id])
+  end
+
   def video_params
-    params.require(:video).permit(:title, :video)
+    params.require(:video).permit(:title, :best_movie)
   end
 end

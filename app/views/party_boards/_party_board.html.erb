@@ -3,8 +3,9 @@
    <div class="card">
     <div class="card-body">
       <h4 class="card-title">
-          <%= link_to party_board.title, party_board_path(party_board) %>
+        <%= link_to party_board.title, party_board_path(party_board) %>
       </h4>
+      <p><font size="4" color="red"><%= party_board.recruit %></font></p>
       <% if current_user.own?(party_board) %>
         <%= render 'crud_menus', party_board: party_board  %>
       <% else %>
@@ -12,7 +13,7 @@
       <% end %>
       <ul class="list-inline">
         <li class="list-inline-item">
-          <%= icon 'far', 'user' %>
+          <%= link_to (image_tag party_board.user.avatar_url, size: '50x50', class: 'rounded-circle'), user_path(party_board.user) %>
           <%= party_board.user.decorate.full_name %>
         </li>
         <li class="list-inline-item">
@@ -20,7 +21,7 @@
           <%= l party_board.created_at, format: :long %>
         </li>
       </ul>
-      <p class="card-text"><%= party_board.body %></p>
+     <span style="font-size:30px"><p class="card-text"><%= party_board.body %></p></span>
     </div>
   </div>
  </div>

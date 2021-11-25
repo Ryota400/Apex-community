@@ -1,5 +1,5 @@
 class Clip < ApplicationRecord
+  mount_uploader :movie, MovieUploader
   belongs_to :user
-  has_one_attached :video
   validates :title, presence: true, length: { maximum: 255 }
 end

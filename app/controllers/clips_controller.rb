@@ -1,5 +1,5 @@
 class ClipsController < ApplicationController
-  before_action :set_board, only: %i[edit update destroy]
+  before_action :set_clip, only: %i[edit update destroy]
   def index
     @q = Clip.ransack(params[:q])
     @clips = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
@@ -45,7 +45,15 @@ class ClipsController < ApplicationController
 
   private
 
+  def find_clip
+    @clip = current_user.clips.find(params[:id])
+  end
+
+  def set_clip
+    @clip = current_user.clips.find(params[:id])
+  end
+
   def clip_params
-    params.require(:clip).permit(:title, :video)
+    params.require(:clip).permit(:title, :movie)
   end
 end

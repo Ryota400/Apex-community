@@ -18,7 +18,11 @@
               </ul>
             </div>
           </div>
-          <p align="center"><video src="<%= rails_blob_path(@video.video) %>" type="video/mp4" width="70%" height="70%" autoplay="true" muted="true" controls></video></p>
+          <p align="center">
+            <%= link_to @video.best_movie_url.to_s do %>
+              <%= video_tag(@video.best_movie.to_s, :controls => true, size: "650x480" ) %>
+            <% end %>
+          </p>
         </div>
       </article>
     </div>

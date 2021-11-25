@@ -38,7 +38,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    'https://i.gyazo.com/a84314c87dd2f2f1636b2a5e2085eb3f.png'
+    'https://i.gyazo.com/0f176268ee2636e082a46c4fcac97fb5.png'
   end
 
   protected
