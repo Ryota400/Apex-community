@@ -1,7 +1,11 @@
 <% content_for(:title, t('.title')) %>
 <div class="container pt-3">
+  <div class="top">
+   　<div style="text-align: center"><img src="https://i.gyazo.com/56be589b1593d4258b5a96b70b0c2cc0.png"/></div>
+   <p>パーティー募集一覧</p>
+  </div>
    <div class="row">
-     <div class="col-lg-6 offset-lg-4">
+     <div class="col-lg-7 offset-lg-3">
        <%= render 'search_form', url: party_boards_path %>
      </div>
      <%= paginate @party_boards %>

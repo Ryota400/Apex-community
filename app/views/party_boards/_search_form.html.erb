@@ -1,6 +1,6 @@
 <%= search_form_for @q, class: 'mb-6' do |f| %>
     <div class="input-group mb-4">
-      <div class="col-sm-9">
+      <div class="col-sm-10">
         <%= f.radio_button :title_cont, 'カジュアル募集' %>
          カジュアル募集
         <%= f.radio_button :title_cont, 'ランク募集' %>
@@ -8,12 +8,14 @@
         <%= f.radio_button :title_cont, 'クラン募集' %>
          クラン募集
       </div>
-      <div class="col-sm-9">
-        <%= f.radio_button :recruit_cont, '募集中' %>
-         募集中
-      </div>
       <div class="input-group-append">
         <%= f.submit class: 'btn btn-primary' %>
       </div>
+      <br>
+      <div class="col-sm-10">
+        <%= f.radio_button :recruit_cont, '募集中' %>
+         募集中
+      </div>
+
     </div>
 <% end %>
