@@ -20,7 +20,7 @@
           </div>
           <p align="center">
             <%= link_to @video.best_movie_url.to_s do %>
-              <%= video_tag(@video.best_movie.to_s, :controls => true, size: "650x480" ) %>
+              <%= video_tag(@video.best_movie.to_s, :controls => true, :autoplay => true, :muted => true, size: "650x480" ) %>
             <% end %>
           </p>
         </div>

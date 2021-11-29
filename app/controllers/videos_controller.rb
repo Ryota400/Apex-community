@@ -54,6 +54,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :best_movie)
+    params.require(:video).permit(:title, :best_movie, :best_movie_cache)
   end
 end

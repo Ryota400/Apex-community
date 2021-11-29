@@ -14,7 +14,9 @@ class BestMovieUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  # def default_url(*args)
+  def default_url
+    'https://i.gyazo.com/d9d7dc0d07a4eb756841bcc946afc915.mp4'
+  end
   #   # For Rails 3.1+ asset pipeline compatibility:
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #

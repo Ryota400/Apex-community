@@ -1,8 +1,8 @@
-.top {
+.best {
   position: center;
 }
 
-.top p {
+.best p {
   position: absolute;
   color: white;/*文字は白に*/
   font-weight: bold; /*太字に*/
@@ -17,12 +17,8 @@
   padding:0;
 }
 
-.top img {
+.best img {
   width: 1100px;
   height: 350px;
   size: cover;
-}
-
-.col-sm-10 {
-  font-size: larger;
 }
