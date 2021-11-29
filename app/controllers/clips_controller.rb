@@ -54,6 +54,6 @@ class ClipsController < ApplicationController
   end
 
   def clip_params
-    params.require(:clip).permit(:title, :movie)
+    params.require(:clip).permit(:title, :movie, :movie_cache)
   end
 end
