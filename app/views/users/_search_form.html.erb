@@ -2,8 +2,17 @@
     <div class="row">
       <div class="form-inline align-items-center mx-auto">
         <div class="col-auto">
-          <%= f.search_field :user_name_or_genre_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
+          <%= f.label :user_name %>
+          <%= f.search_field :user_name_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
         </div>
+        <p>
+          <%= f.label :genre %>
+          <%= f.select :genre_cont, ['ブロンズ', 'シルバー', 'ゴールド', 'プラチナ', 'ダイヤモンド', 'マスター', 'プレデター'], {include_blank: '選択してください'} %>
+        </p>
+        <p>
+          <%= f.label :geme %>
+          <%= f.select :geme_cont, ['PlayStation®4', 'PlayStation®5', 'Xbox One', 'Xbox Series X|S', 'Nitendo Switch', 'PC'], {include_blank: '選択してください'} %>
+        </p>
         <div class="col-auto">
           <%= f.submit class: 'btn btn-primary' %>
         </div>
