@@ -1,0 +1,7 @@
+<%= link_to favorite_path(current_user.favorites.find_by(video_id: video.id)),
+            id: "js-favorite-button-for-video-#{video.id}",
+            class:"float-right",
+            method: :delete,
+            remote: true do %>
+  <%= icon 'fas', 'star' %>
+<% end %>

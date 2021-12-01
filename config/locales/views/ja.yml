@@ -52,7 +52,7 @@ ja:
     edit:
       title: 'パーティー募集編集'
     bookmarks:
-      title: 'お気に入り一覧'
+      title: 'お気に入りパーティー募集一覧'
       no_result: 'お気に入り登録していません'
   videos:
     index:
@@ -64,6 +64,9 @@ ja:
       title: 'ベストプレイ詳細'
     edit:
       title: 'ベストプレイ編集'
+    favorites:
+      title: 'お気に入りベストプレイ一覧'
+      no_result: 'お気に入り登録していません'
   clips:
     index:
       title: 'おもしろクリップ集'
@@ -74,7 +77,20 @@ ja:
       title: 'おもしろクリップ詳細'
     edit:
       title: 'おもしろクリップ詳細'
+    likes:
+      title: 'お気に入りおもしろクリップ一覧'
+      no_result: 'お気に入り登録していません'
   bookmarks:
+    create:
+      success: 'お気に入り登録しました'
+    destroy:
+      success: 'お気に入り登録を外しました'
+  favorites:
+    create:
+      success: 'お気に入り登録しました'
+    destroy:
+      success: 'お気に入り登録を外しました'
+  likes:
     create:
       success: 'お気に入り登録しました'
     destroy:

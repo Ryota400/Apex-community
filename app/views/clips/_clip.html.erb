@@ -6,7 +6,11 @@
       <h4 class="card-title">
         <%= link_to clip.title, clip_path(clip)  %>
       </h4>
-        <%= render 'crud_menus', clip: clip if current_user.own?(clip)  %>
+      <% if current_user.own?(clip) %>
+        <%= render 'crud_menus', clip: clip %>
+      <% else %>
+        <%= render 'like_button', clip: clip  %>
+      <% end %>
       <ul class="list-inline">
         <li class="list-inline-item">
           <%= link_to (image_tag clip.user.avatar_url, size: '50x50', class: 'rounded-circle'), user_path(clip.user) %>

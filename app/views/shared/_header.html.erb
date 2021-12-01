@@ -46,8 +46,16 @@
           <%= link_to 'ユーザー検索', users_path, class: 'nav-link' %>
         </li>
 
-        <li class="nav-item">
-           <%= link_to 'お気に入り一覧', bookmarks_party_boards_path, class: 'nav-link' %>
+        <li class="nav-item dropdown-slide">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           お気に入り一覧
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right">
+            <%= link_to 'パーティ募集', bookmarks_party_boards_path, class: 'dropdown-item' %>
+            <%= link_to 'ベストプレイ', favorites_videos_path, class: 'dropdown-item' %>
+            <%= link_to 'おもしろクリップ', likes_clips_path, class: 'dropdown-item' %>
+          </div>
         </li>
 
         <li class="nav-item dropdown-slide">

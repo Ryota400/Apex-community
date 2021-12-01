@@ -43,6 +43,10 @@ class ClipsController < ApplicationController
     redirect_to clips_path, success: t('defaults.message.deleted', item: Clip.model_name.human)
   end
 
+  def likes
+    @like_clips = current_user.like_clips.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def find_clip

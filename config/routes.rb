@@ -13,7 +13,17 @@ Rails.application.routes.draw do
     end
   end
   resources :bookmarks, only: %i[create destroy]
-  resources :videos
-  resources :clips
+  resources :videos do
+    collection do
+     get :favorites
+    end
+  end
+  resources :favorites, only: %i[create destroy]
+  resources :clips do
+    collection do
+      get :likes
+    end
+  end
+  resources :likes, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
 end

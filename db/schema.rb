@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_115703) do
+ActiveRecord::Schema.define(version: 2021_12_01_040853) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -36,11 +36,17 @@ ActiveRecord::Schema.define(version: 2021_11_25_115703) do
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "party_board_id"
+    t.integer "video_id"
+    t.integer "clip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["clip_id"], name: "index_bookmarks_on_clip_id"
     t.index ["party_board_id"], name: "index_bookmarks_on_party_board_id"
+    t.index ["user_id", "clip_id"], name: "index_bookmarks_on_user_id_and_clip_id", unique: true
     t.index ["user_id", "party_board_id"], name: "index_bookmarks_on_user_id_and_party_board_id", unique: true
+    t.index ["user_id", "video_id"], name: "index_bookmarks_on_user_id_and_video_id", unique: true
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+    t.index ["video_id"], name: "index_bookmarks_on_video_id"
   end
 
   create_table "clips", force: :cascade do |t|
@@ -60,6 +66,26 @@ ActiveRecord::Schema.define(version: 2021_11_25_115703) do
     t.datetime "updated_at", null: false
     t.index ["party_board_id"], name: "index_comments_on_party_board_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "video_id"], name: "index_favorites_on_user_id_and_video_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+    t.index ["video_id"], name: "index_favorites_on_video_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "clip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clip_id"], name: "index_likes_on_clip_id"
+    t.index ["user_id", "clip_id"], name: "index_likes_on_user_id_and_clip_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "party_boards", force: :cascade do |t|

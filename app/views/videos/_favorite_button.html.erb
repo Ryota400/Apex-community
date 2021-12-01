@@ -1,0 +1,5 @@
+<% if current_user.favorite?(video) %>
+  <%= render 'unfavorite', { video: video } %>
+<% else %>
+  <%= render 'favorite', { video: video } %>
+<% end %>

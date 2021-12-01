@@ -1,0 +1,7 @@
+<%= link_to likes_path(clip_id: clip.id),
+            id: "js-like-button-for-clip-#{clip.id}",
+            class:"float-right",
+            method: :post,
+            remote: true do %>
+  <%= icon 'far', 'star' %>
+<% end %>

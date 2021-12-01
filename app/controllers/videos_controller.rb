@@ -43,6 +43,10 @@ class VideosController < ApplicationController
     redirect_to videos_path, success: t('defaults.message.deleted', item: Video.model_name.human)
   end
 
+  def favorites
+    @favorite_videos = current_user.favorite_videos.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def find_video
