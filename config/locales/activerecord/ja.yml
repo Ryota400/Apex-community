@@ -7,6 +7,9 @@ ja:
       clip: 'おもしろクリップ'
       comment: 'コメント'
     attributes:
+      id: 'ID'
+      created_at: '作成日時'
+      updated_at: '更新日時'
       user:
         email: 'メールアドレス'
         password: 'パスワード'
@@ -17,10 +20,12 @@ ja:
         geme: 'プラットフォーム'
         gameid: 'PS/Xbox/Switch ID'
         pcid: 'Steam/Origin ID'
+        role: '権限'
       party_board:
         title: 'タイトル'
         recruit: '募集確認'
         body: '本文'
+        user: '作成者'
       comment:
         body: 'コメント'
       video:
@@ -29,3 +34,8 @@ ja:
       clip:
         title: 'タイトル'
         movie: '動画'
+    enums:
+      user:
+        role:
+          general: '一般'
+          admin: '管理者'

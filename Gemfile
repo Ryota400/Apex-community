@@ -49,6 +49,7 @@ gem 'ransack'
 gem 'rmagick'
 gem 'sorcery', '0.14.0'
 gem 'streamio-ffmpeg'
+gem 'enum_help'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

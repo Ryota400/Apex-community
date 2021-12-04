@@ -18,6 +18,7 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか?'
+      not_authorized: '権限がありません'
   users:
     new:
       title: 'ユーザー登録'
@@ -100,3 +101,16 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'

@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= video.id %>
+  </td>
+  <td>
+    <%= video.title %>
+  </td>
+  <td>
+    <%= video.user.decorate.user_name %>
+  </td>
+  <td>
+    <%= l video.created_at, format: :long %>
+  </td>
+  <td>
+    <%= link_to t('defaults.show'), admin_video_path(video), class: 'btn btn-info' %>
+    <%= link_to t('defaults.edit'), edit_admin_video_path(video), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_video_path(video), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+  </td>
+</tr>

@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= clip.id %>
+  </td>
+  <td>
+    <%= clip.title %>
+  </td>
+  <td>
+    <%= clip.user.decorate.user_name %>
+  </td>
+  <td>
+    <%= l clip.created_at, format: :long %>
+  </td>
+  <td>
+    <%= link_to t('defaults.show'), admin_clip_path(clip), class: 'btn btn-info' %>
+    <%= link_to t('defaults.edit'), edit_admin_clip_path(clip), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_clip_path(clip), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+  </td>
+</tr>
