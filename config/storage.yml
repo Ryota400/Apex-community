@@ -35,7 +35,7 @@ local:
 
 amazon:
   service: S3
-  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
-  secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
-  region: 314614241003
+  access_key_id: <%= Rails.application.credentials.dig(:aws, :AKIAUSQDYK3V5LAUQOWV) %>
+  secret_access_key: <%= Rails.application.credentials.dig(:aws, :aEWvkeLknGZTk7EEAAzmJ+8LcBajEK0zK/UHaFaj) %>
+  region: ap-northeast-1
   bucket: apex-community
