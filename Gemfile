@@ -54,6 +54,7 @@ gem 'streamio-ffmpeg'
 gem 'enum_help'
 gem "aws-sdk-s3", require: false
 gem 'fog-aws'
+gem 'dotenv-rails'
 
 # 本番環境用のgemグループを新しく作成しPostgresを指定
 group :production do
