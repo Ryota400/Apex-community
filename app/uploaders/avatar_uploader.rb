@@ -41,6 +41,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
     'https://i.gyazo.com/0f176268ee2636e082a46c4fcac97fb5.png'
   end
 
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
+
   protected
 
   def secure_token

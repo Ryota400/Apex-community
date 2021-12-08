@@ -52,6 +52,8 @@ gem 'rmagick'
 gem 'sorcery', '0.14.0'
 gem 'streamio-ffmpeg'
 gem 'enum_help'
+gem "aws-sdk-s3", require: false
+gem 'fog-aws'
 
 # 本番環境用のgemグループを新しく作成しPostgresを指定
 group :production do
