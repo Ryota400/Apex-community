@@ -3,19 +3,15 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  if Rails.env.development? || Rails.env.test? #開発とテストは今まで通りに
-    config.storage = :file
-  elsif Rails.env.production? #本番はS3に保存する
-    config.storage = :fog
-    config.fog_provider = 'fog/aws'
-    config.fog_credentials = {
-      provider: 'AWS',
-      aws_access_key_id: Rails.application.credentials.aws[:AKIAUSQDYK3V5LAUQOWV],
-      aws_secret_access_key: Rails.application.credentials.aws[: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],
-# credentials下にaws_access_key_idとaws_secret_access_keyはあるよ
-      region: 'ap-northeast-1'
-    }
-    config.fog_directory  = 'apex-community'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/apex-community'
-  end
+  config.storage :fog
+  config.fog_provider = 'fog/aws'
+  config.fog_directory  = 'apex-community'
+  config.fog_credentials = {
+    provider: 'AWS',
+    aws_access_key_id: ENV['AKIAUSQDYK3V5LAUQOWV'],
+    aws_secret_access_key: ENV['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'],
+    region: ENV['ap-northeast-1'],
+    path_style: true
+  }
+
 end
