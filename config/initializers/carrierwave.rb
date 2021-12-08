@@ -1,22 +1,21 @@
-# 下記の三行は入れていた方がいいらしい
 require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
-if Rails.env.production?
-  CarrierWave.configure do |config|
+CarrierWave.configure do |config|
+  if Rails.env.development? || Rails.env.test? #開発とテストは今まで通りに
+    config.storage = :file
+  elsif Rails.env.production? #本番はS3に保存する
+    config.storage = :fog
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
-      # Amazon S3用の設定
       provider: 'AWS',
-      region: ENV['AWS_S3_REGION'],
-      aws_access_key_id: ENV['AKIAUSQDYK3V5LAUQOWV'],
-      aws_secret_access_key: ENV['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'],
+      aws_access_key_id: Rails.application.credentials.aws[:AKIAUSQDYK3V5LAUQOWV],
+      aws_secret_access_key: Rails.application.credentials.aws[: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],
+# credentials下にaws_access_key_idとaws_secret_access_keyはあるよ
+      region: 'ap-northeast-1'
     }
-    config.fog_directory     =  ENV['apex-community']
-    config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+    config.fog_directory  = 'apex-community'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/apex-community'
   end
-
-  # 日本語ファイル名の設定
-  CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 end
