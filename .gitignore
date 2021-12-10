@@ -28,7 +28,6 @@
 .byebug_history
 
 /public/uploads
-/.env # 追記
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

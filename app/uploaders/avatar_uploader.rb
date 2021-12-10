@@ -41,14 +41,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     'https://i.gyazo.com/0f176268ee2636e082a46c4fcac97fb5.png'
   end
 
-  if Rails.env.development? # 開発環境の場合
-    storage :file
-  elsif Rails.env.test? # テスト環境の場合
-    storage :file
-  else # 本番環境の場合
-    storage :fog
-  end
-
+  storage :file
   protected
 
   def secure_token
